@@ -3,15 +3,15 @@
 
 ***
 
-##引言
+##一、引言
 
   最近的工作内容核心是DSL，俗称领域特定语言。涉及到的语言是shell和python，本部分只介绍shell
   
-##shell历史
+##二、shell历史
 
   了解操作系统的都知道，shell是人机交互的工具，完全是指令操作
 
-###Bourne shell
+###1.Bourne shell
 
   最早Ken Thompson设计Unix的时候，使用的是命令解释器，命令解释器接受用户的命令，然后解释他们并执行。
 
@@ -35,13 +35,13 @@ Bourne shell 带来了：
 增加了case~in~esac的条件选择
 文件描述符2>代表错误信息导出
 ```
-###csh, ksh
+###2.csh, ksh
 
 Bourne老爷子创造的sh非常强大，后来引入的争议是Unix系统是C写的，为什么你的shell的语法不像C呢？然后Bill Joy就编写了C Shell(csh)。它用最类似C的语法来编写shell。后来csh演化成了tchsh，但是csh后面的路途就比较坎坷了，最终未能流行起来。但是现在比如在Mac系统上还保留csh。
 
 Korn Shell(ksh)是1983年出现的，它向后兼容Bourne shell。同时吸取了C shell的一些优点，比如job control。
 
-###bash
+###3.bash
 
 在1989年，现在最广泛使用的Bash出现了，它的全称叫做Bourne-Again shell。目的是为了与POSIX的标准保持一致，同时保持对sh的兼容。其实现在很多机器上的/bin/sh往往都链接到bash，我们以为我们是使用Bourne shell，实际上我们使用的是Bourne-Again shell
 
@@ -49,7 +49,7 @@ cat /etc/shells可以查看系统提供的已知shell
 
 注意：这么多shell，到底怎么选择和使用呢，可以在建立用户时候，为每个用户指定默认的shell。可以通过echo $SHELL查看自己默认的shell，查看当前shell：echo $0
 
-##shell运行原理
+##三、shell运行原理
 
 shell作为一门语言，与其他语言有什么差别。我们指导编程语言大致分为两类，面向对象和面向过程，而shell是面向过程式语言，在面向对象的语言，要经过编译和链接的过程，最后才生成可执行文件
 
@@ -69,7 +69,7 @@ shell是linux系统提供给用户的最重要的系统程序，不属于内核部分，而是核心之外，以用
 
 Shell基本执行过程及父子进程之间的关系如图所示。具体详细介绍参考第几章
 
-##shell执行方式
+##四、shell执行方式
 
 (1)source filename
 
@@ -108,7 +108,7 @@ Shell基本执行过程及父子进程之间的关系如图所示。具体详细介绍参考第几章
    $? 显示最后命令的推出状况。0表示没有错误。
 ```
 
-##source filename 与 sh filename 及./filename执行脚本的区别在那里呢？
+##五、source filename 与 sh filename 及./filename执行脚本的区别在那里呢？
    
 1.当shell脚本具有可执行权限时，用sh filename与./filename执行脚本是没有区别得。./filename是因为当前目录没有在PATH中，所有"."是用来表示当前目录的。
 
