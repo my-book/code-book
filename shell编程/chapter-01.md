@@ -49,7 +49,11 @@ cat /etc/shells可以查看系统提供的已知shell
 
 注意：这么多shell，到底怎么选择和使用呢，可以在建立用户时候，为每个用户指定默认的shell。可以通过echo $SHELL查看自己默认的shell，查看当前shell：echo $0
 
-##三、shell运行原理
+##三、linux介绍
+
+&emsp;&emsp;![](images/shell-005.jpg)
+
+##四、shell运行原理
 
 shell作为一门语言，与其他语言有什么差别。我们指导编程语言大致分为两类，面向对象和面向过程，而shell是面向过程式语言，在面向对象的语言，要经过编译和链接的过程，最后才生成可执行文件
 
@@ -69,7 +73,7 @@ shell是linux系统提供给用户的最重要的系统程序，不属于内核部分，而是核心之外，以用
 
 Shell基本执行过程及父子进程之间的关系如图所示。具体详细介绍参考第几章
 
-##四、shell执行方式
+##五、shell执行方式
 
 (1)source filename
 
@@ -108,7 +112,7 @@ Shell基本执行过程及父子进程之间的关系如图所示。具体详细介绍参考第几章
    $? 显示最后命令的推出状况。0表示没有错误。
 ```
 
-##五、source filename 与 sh filename 及./filename执行脚本的区别在那里呢？
+##六、source filename 与 sh filename 及./filename执行脚本的区别在那里呢？
    
 1.当shell脚本具有可执行权限时，用sh filename与./filename执行脚本是没有区别得。./filename是因为当前目录没有在PATH中，所有"."是用来表示当前目录的。
 
